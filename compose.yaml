@@ -20,7 +20,9 @@ services:
       retries: 5
 
   jupyterlab:
-    image: marketing-analytics-notebook:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: jupyterlab
     restart: unless-stopped
     ports:
